@@ -7,14 +7,20 @@ doctrine:
         #server_version: '15'
     orm:
         auto_generate_proxy_classes: true
+        enable_lazy_ghost_objects: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            App:
+            Customers:
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+                dir: '%kernel.project_dir%/src/Customers/Domain/Entity'
+                prefix: 'App\Customers\Domain\Entity'
+                alias: Customers
+            Artists:
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Artists/Domain/Entity'
+                prefix: 'App\Artists\Domain\Entity'
+                alias: Artists
 
 when@test:
     doctrine:
